@@ -8,6 +8,12 @@ body {
     margin-top: 20px;
 }
 
+
+.casa-logo{
+    width: 130px;
+}
+
+
 /* Animaciones cuando cargan la pagina */
 
 .animated {

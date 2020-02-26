@@ -1,0 +1,20 @@
+<h1>
+    Buscando:
+    <small>
+        {{param}}
+    </small>
+    <hr>
+</h1>
+
+<!-- Si no encuentra ningun resultado mostrará este mensaje -->
+<div *ngIf="heroe.length == 0" class="row animated fadeIn fast">
+    <div class="col-md-12">
+        <div class="alert alert-primary" role="alert">
+            No existen resultados iguales a: {{param}}
+        </div>
+    </div>
+</div>
+
+<div class="card-columns animated fadeIn fast">
+    <app-heroe-tarjeta [heores]="hero" [index]="hero.idx" *ngFor="let hero of heroe;"></app-heroe-tarjeta> 
+</div>
