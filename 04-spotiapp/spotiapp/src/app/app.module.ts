@@ -8,12 +8,19 @@ import { ROUTES } from './app.routes';
 // Permitir hacer peticiones HTTP
 import { HttpClientModule } from '@angular/common/http';
 
+// Import components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+
+// Import Services
 import { SpotifyService } from './services/spotify.service';
+
+// Import Pipes
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +28,9 @@ import { SpotifyService } from './services/spotify.service';
     HomeComponent,
     SearchComponent,
     ArtistaComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagePipe,
+    TarjetasComponent
   ],
   imports: [
     BrowserModule,
