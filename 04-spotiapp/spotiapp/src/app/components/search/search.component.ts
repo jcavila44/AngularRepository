@@ -18,12 +18,17 @@ export class SearchComponent {
   // }
 
   buscar(termino: any) {
-    this.loading = true;
-    this._spotifyService.getArtistas(termino)
-      .subscribe((data: any) => {
-        this.artistas = data;
-        this.loading = false;
-      });
+    if (termino) {
+      this.loading = true;
+      this._spotifyService.getArtistas(termino)
+        .subscribe((data: any) => {
+          this.artistas = data;
+          this.loading = false;
+        });
+    } else {
+      this.artistas = [];
+    }
+
   }
 
 }

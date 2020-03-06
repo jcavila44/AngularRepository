@@ -22,7 +22,7 @@ export class TarjetasComponent {
     }
 
     this._router.navigate(['/artist', artistaId]);
-    console.log(artistaId);
+    // console.log(artistaId);
   }
 
 

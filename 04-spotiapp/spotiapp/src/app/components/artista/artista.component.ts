@@ -26,7 +26,7 @@ export class ArtistaComponent {
     this._services.getArtista(id).subscribe(response => {
       this.artista = response;
       this.loading = false;
-      console.log(response);
+      // console.log(response);
     })
   }
 
@@ -34,7 +34,7 @@ export class ArtistaComponent {
   getTopTraks(id: string) {
     this._services.getTopTraks(id).subscribe(response => {
       this.topTracks = response;
-      console.log(response);
+      // console.log(response);
     })
 
 
