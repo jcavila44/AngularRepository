@@ -14,7 +14,16 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+          },
+          {
+            path: 'agregar/:listaId',
+            loadChildren: () =>
+              import('../agregar/agregar.module').then(m => m.AgregarPageModule)
           }
+          // {
+          //   path: 'agregar',
+
+          // }
         ]
       },
       {
@@ -45,4 +54,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }
