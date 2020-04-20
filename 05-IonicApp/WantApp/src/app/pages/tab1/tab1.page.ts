@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DeseosService } from 'src/app/services/deseos.service';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Lista } from 'src/app/models/lista.model';
 
 @Component({
   selector: 'app-tab1',
@@ -20,11 +21,10 @@ export class Tab1Page {
   }
 
   async agregarLista() {
-    // this._router.navigateByUrl('/tabs/tab1/agregar');
     const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Subtitle',
-      message: 'This is an alert message.',
+      header: 'Lista Nueva',
+      // subHeader: 'Subtitle',
+      // message: 'This is an alert message.',
       inputs:
         [
           {
@@ -46,7 +46,10 @@ export class Tab1Page {
             if (data.titulo.length === 0) {
               return;
             }
-            this._deseosServices.crearLista(data.titulo);
+            const listaId = this._deseosServices.crearLista(data.titulo);
+
+            // Creamos la lista
+            this._router.navigateByUrl(`/tabs/tab1/agregar/${listaId}`);
           }
         }
       ]
@@ -54,6 +57,12 @@ export class Tab1Page {
     });
 
     await alert.present();
+  }
+
+  listaSeleccionada(lista: Lista) {
+    // console.log(lista);
+
+    this._router.navigateByUrl(`/tabs/tab1/agregar/${lista.id}`);
   }
 
 }
